@@ -73,6 +73,8 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\FastObject.cs" />
     <Compile Include="BusinessObjects\RelatedData.cs" />
+    <Compile Include="BusinessObjects\SlowObjectWithAssociation.cs" />
+    <Compile Include="BusinessObjects\SlowObjectWithCache.cs" />
     <Compile Include="BusinessObjects\SlowObject.cs" />
     <Compile Include="BusinessObjects\SlowObjectWithPersistentAlias.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />

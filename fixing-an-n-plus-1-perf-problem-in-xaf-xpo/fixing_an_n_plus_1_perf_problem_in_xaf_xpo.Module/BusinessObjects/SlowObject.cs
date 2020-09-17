@@ -46,5 +46,19 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
         //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
         //    this.PersistentProperty = "Paid";
         //}
+
+        private string _Name;
+        [Persistent("Name")]
+        public string Name { get => _Name; set => SetPropertyValue(nameof(Name), ref _Name, value); }
+
+        [NonPersistent]
+        public int ValueSum
+        {
+            get
+            {
+                var value = Session.Query<RelatedData>().Where(r => r.SlowObject == this).Sum(m => m.Value);
+                return value;
+            }
+        }
     }
 }

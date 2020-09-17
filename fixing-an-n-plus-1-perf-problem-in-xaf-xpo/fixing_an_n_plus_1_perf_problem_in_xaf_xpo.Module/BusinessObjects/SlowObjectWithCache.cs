@@ -21,9 +21,9 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class RelatedData : BaseObject
+    public class SlowObjectWithCache : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public RelatedData(Session session)
+        public SlowObjectWithCache(Session session)
             : base(session)
         {
         }
@@ -47,30 +47,23 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
         //    this.PersistentProperty = "Paid";
         //}
 
+        private string _Name;
+        [Persistent("Name")]
+        public string Name { get => _Name; set => SetPropertyValue(nameof(Name), ref _Name, value); }
 
-        private int _Value;
-        [Persistent("Value")]
-        public int Value { get => _Value; set => SetPropertyValue(nameof(Value), ref _Value, value); }
 
-        private SlowObject _SlowObject;
-        [Persistent("SlowObject")]
-        public SlowObject SlowObject { get => _SlowObject; set => SetPropertyValue(nameof(SlowObject), ref _SlowObject, value); }
-
-        private SlowObjectWithAssociation _SlowObjectWithAssociation;
-        [Persistent("SlowObjectWithAssociation")]
-        [Association]
-        public SlowObjectWithAssociation SlowObjectWithAssociation { get => _SlowObjectWithAssociation; set => SetPropertyValue(nameof(SlowObjectWithAssociation), ref _SlowObjectWithAssociation, value); }
-
-        private SlowObjectWithCache _SlowObjectWithCache;
-        [Persistent("SlowObjectWithCache")]
-        public SlowObjectWithCache SlowObjectWithCache { get => _SlowObjectWithCache; set => SetPropertyValue(nameof(SlowObjectWithCache), ref _SlowObjectWithCache, value); }
-
-        private SlowObjectWithPersistentAlias _SlowObjectWithPersistentAlias;
-        [Persistent("SlowObjectWithPersistentAlias")]
-        public SlowObjectWithPersistentAlias SlowObjectWithPersistentAlias { get => _SlowObjectWithPersistentAlias; set => SetPropertyValue(nameof(SlowObjectWithPersistentAlias), ref _SlowObjectWithPersistentAlias, value); }
-
-        private FastObject _FastObject;
-        [Persistent("FastObject")]
-        public FastObject FastObject { get => _FastObject; set => SetPropertyValue(nameof(FastObject), ref _FastObject, value); }
+        public int? _ValueSum;
+        [NonPersistent]
+        public int ValueSum
+        {
+            get
+            {
+                if (!_ValueSum.HasValue)
+                {
+                    _ValueSum = Session.Query<RelatedData>().Where(r => r.SlowObjectWithCache == this).Sum(m => m.Value);
+                }
+                return _ValueSum.Value;
+            }
+        }
     }
 }
