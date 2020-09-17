@@ -1,5 +1,17 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="fixing-an-n-plus-1-perf-problem-in-xaf-xpo">
-  <Views>
-  </Views>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="RelatedData_ListView" Index="0" />
+          <Item Id="SlowObject_ListView" Index="1" />
+          <Item Id="FastObject_ListView" Index="2" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="19.2.8.0" IsNewNode="True" />
+  </SchemaModules>
 </Application>
