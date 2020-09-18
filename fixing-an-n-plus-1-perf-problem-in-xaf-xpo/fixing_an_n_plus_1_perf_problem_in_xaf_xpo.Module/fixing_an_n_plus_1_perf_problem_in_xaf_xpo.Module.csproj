@@ -74,7 +74,12 @@
     <Compile Include="BusinessObjects\SlowOfferWithLinq.cs" />
     <Compile Include="BusinessObjects\SlowOffer.cs" />
     <Compile Include="BusinessObjects\SlowOfferWithPersistentAlias.cs" />
-    <Compile Include="Controllers\GenerateDataController.cs" />
+    <Compile Include="Controllers\GenerateDataController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\GenerateSlowOfferDataController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -90,7 +95,11 @@
   <ItemGroup>
     <None Include="BusinessObjects\ReadMe.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Bogus">
+      <Version>31.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
@@ -6,8 +7,20 @@ using DevExpress.Xpo;
 
 namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
 {
+    public interface IOffer
+    {
+        string Name { get; set; }
+
+        void AddRange(IEnumerable<IOfferItem> items);
+    }
+
+    public interface IOfferItem
+    {
+        int Hours { get; set; }
+    }
+
     [DefaultClassOptions]
-    public class SlowOffer : BaseObject
+    public class SlowOffer : BaseObject, IOffer
     {
         public SlowOffer(Session session) : base(session) { }
 
@@ -31,9 +44,11 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
 
         [Association, Aggregated]
         public XPCollection<SlowOfferItem> OfferItems => GetCollection<SlowOfferItem>(nameof(OfferItems));
+
+        public void AddRange(IEnumerable<IOfferItem> items) => OfferItems.AddRange(items.OfType<SlowOfferItem>());
     }
 
-    public class SlowOfferItem : BaseObject
+    public class SlowOfferItem : BaseObject, IOfferItem
     {
         public SlowOfferItem(Session session) : base(session) { }
 
