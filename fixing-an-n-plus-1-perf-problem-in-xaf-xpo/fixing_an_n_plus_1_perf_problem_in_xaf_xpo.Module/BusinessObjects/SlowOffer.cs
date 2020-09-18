@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+
+using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
@@ -20,6 +23,7 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
     }
 
     [DefaultClassOptions]
+    [DefaultProperty(nameof(HourSum))]
     public class SlowOffer : BaseObject, IOffer
     {
         public SlowOffer(Session session) : base(session) { }
