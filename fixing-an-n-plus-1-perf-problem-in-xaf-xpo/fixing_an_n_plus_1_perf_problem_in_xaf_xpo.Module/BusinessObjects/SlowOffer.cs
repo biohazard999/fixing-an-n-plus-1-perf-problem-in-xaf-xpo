@@ -10,18 +10,6 @@ using DevExpress.Xpo;
 
 namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
 {
-    public interface IOffer
-    {
-        string Name { get; set; }
-
-        void AddRange(IEnumerable<IOfferItem> items);
-    }
-
-    public interface IOfferItem
-    {
-        int Hours { get; set; }
-    }
-
     [DefaultClassOptions]
     [DefaultProperty(nameof(HourSum))]
     public class SlowOffer : BaseObject, IOffer

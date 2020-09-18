@@ -22,6 +22,7 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Win
             UseLightStyle = true;
             SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
             ExecuteStartupLogicBeforeClosingLogonWindow = true;
+            ignoreUserModelDiffs = true;
         }
         #endregion
         public fixing_an_n_plus_1_perf_problem_in_xaf_xpoWindowsFormsApplication()

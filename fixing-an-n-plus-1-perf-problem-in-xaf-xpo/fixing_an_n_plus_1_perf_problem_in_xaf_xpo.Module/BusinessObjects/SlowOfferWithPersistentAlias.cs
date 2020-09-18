@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 using DevExpress.Persistent.Base;
@@ -8,7 +10,8 @@ using DevExpress.Xpo;
 namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
 {
     [DefaultClassOptions]
-    public class SlowOfferWithPersistentAlias : BaseObject
+    [DefaultProperty(nameof(HourSum))]
+    public class SlowOfferWithPersistentAlias : BaseObject, IOffer
     {
         public SlowOfferWithPersistentAlias(Session session) : base(session) { }
 
@@ -17,13 +20,15 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
         public string Name { get => _Name; set => SetPropertyValue(nameof(Name), ref _Name, value); }
 
         [PersistentAlias("OfferItems.Sum([Hours])")]
-        public int ValueSum => (int)EvaluateAlias(nameof(ValueSum));
+        public int HourSum => (int)EvaluateAlias(nameof(HourSum));
 
         [Association, Aggregated]
         public XPCollection<SlowOfferItemWithPersistentAlias> OfferItems => GetCollection<SlowOfferItemWithPersistentAlias>(nameof(OfferItems));
+
+        public void AddRange(IEnumerable<IOfferItem> items) => OfferItems.AddRange(items.OfType<SlowOfferItemWithPersistentAlias>());
     }
 
-    public class SlowOfferItemWithPersistentAlias : BaseObject
+    public class SlowOfferItemWithPersistentAlias : BaseObject, IOfferItem
     {
         public SlowOfferItemWithPersistentAlias(Session session) : base(session) { }
 

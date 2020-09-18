@@ -21,6 +21,7 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Win.Controllers
             base.OnFrameAssigned();
             Frame.GetController<RefreshController>().RefreshAction.Executing += RefreshAction_Executing;
             Frame.GetController<RefreshController>().RefreshAction.Executed += RefreshAction_Executed; ;
+            Frame.GetController<RecordsNavigationController>().Active[nameof(MeasurePerformanceController)] = false;
         }
 
         private void RefreshAction_Executing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -36,7 +37,8 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Win.Controllers
             var member = View.ObjectTypeInfo.Type.GetProperties().FirstOrDefault(m => m.GetCustomAttribute<AssociationAttribute>() != null);
             var cnt2 = ObjectSpace.GetObjectsCount(member.PropertyType.GetGenericArguments()[0], null);
 
-            WinApplication.Messaging.Show("Elapsed", $"{View.ObjectTypeInfo.Type.Name}: {cnt}{Environment.NewLine}{member.PropertyType.GetGenericArguments()[0].Name}: {cnt2}{Environment.NewLine}{Stopwatch.Elapsed}");
+            var mode = (View.Model as DevExpress.ExpressApp.Model.IModelListView).DataAccessMode;
+            WinApplication.Messaging.Show("Elapsed", $"{View.Caption}{Environment.NewLine}DataAccessMode: {mode}{Environment.NewLine}{View.ObjectTypeInfo.Type.Name}: {cnt}{Environment.NewLine}{member.PropertyType.GetGenericArguments()[0].Name}: {cnt2}{Environment.NewLine}{Stopwatch.Elapsed}");
         }
     }
 }

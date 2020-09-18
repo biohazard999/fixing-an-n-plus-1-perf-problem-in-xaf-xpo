@@ -71,6 +71,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\IOffer.cs" />
+    <Compile Include="BusinessObjects\IOfferItem.cs" />
     <Compile Include="BusinessObjects\SlowOfferWithLinq.cs" />
     <Compile Include="BusinessObjects\SlowOffer.cs" />
     <Compile Include="BusinessObjects\SlowOfferWithPersistentAlias.cs" />

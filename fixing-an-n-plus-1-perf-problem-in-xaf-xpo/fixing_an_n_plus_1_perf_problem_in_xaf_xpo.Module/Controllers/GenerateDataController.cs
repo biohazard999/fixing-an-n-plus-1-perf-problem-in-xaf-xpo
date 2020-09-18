@@ -29,7 +29,7 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Controllers
             )
             {
                 Caption = "Generate",
-                Value = 200
+                Value = 300
             };
 
             GenerateData.Execute += GenerateData_Execute;
@@ -54,8 +54,8 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Controllers
                     faker.Generate(100);
                     os.CommitChanges();
                 }
-                ObjectSpace.Refresh();
-            }            
+            }
+            ObjectSpace.Refresh();
         }
     }
 }

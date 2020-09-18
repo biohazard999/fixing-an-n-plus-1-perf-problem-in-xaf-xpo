@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module\fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.csproj">

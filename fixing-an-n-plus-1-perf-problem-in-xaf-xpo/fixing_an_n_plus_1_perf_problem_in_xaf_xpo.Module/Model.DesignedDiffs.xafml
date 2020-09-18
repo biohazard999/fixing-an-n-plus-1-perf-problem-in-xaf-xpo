@@ -4,9 +4,14 @@
     <Items>
       <Item Id="Default">
         <Items>
-          <Item Id="RelatedData_ListView" Index="0" />
-          <Item Id="SlowObject_ListView" Index="1" />
-          <Item Id="FastObject_ListView" Index="2" />
+          <Item Id="SlowOffer_ListView" Index="0" />
+          <Item Id="SlowOfferWithLinq_ListView" Index="1" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView" Index="2" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_SERVERMODE" ObjectKey="" Caption="Offer Persistent Alias ServerMode" ViewId="SlowOfferWithPersistentAlias_SERVERMODE_ListView" Index="3" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_DATAVIEW" ObjectKey="" Caption="Offer Persistent Alias DataView" Index="4" ViewId="SlowOfferWithPersistentAlias_DATAVIEW_ListView" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_INSTANTFEEDBACK" ObjectKey="" Caption="Offer Persistent Alias InstantFeedback" Index="5" ViewId="SlowOfferWithPersistentAlias_INSTANTFEEDBACK_ListView" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_INSTANTFEEDBACKView" ObjectKey="" Caption="Offer Persistent Alias InstantFeedbackView" Index="6" ViewId="SlowOfferWithPersistentAlias_INSTANTFEEDBACKVIEW_ListView" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_SERVERVIEW" ObjectKey="" Caption="Offer Persistent Alias ServerView" Index="7" ViewId="SlowOfferWithPersistentAlias_SERVERVIEW_ListView" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
@@ -14,4 +19,41 @@
   <SchemaModules>
     <SchemaModule Name="SystemModule" Version="19.2.8.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <ListView Id="SlowOfferWithPersistentAlias_DATAVIEW_ListView" ClassName="fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects.SlowOfferWithPersistentAlias" DataAccessMode="DataView" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="HourSum" PropertyName="HourSum" Width="400" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="SlowOfferWithPersistentAlias_INSTANTFEEDBACK_ListView" ClassName="fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects.SlowOfferWithPersistentAlias" DataAccessMode="InstantFeedback" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="HourSum" PropertyName="HourSum" Width="400" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="SlowOfferWithPersistentAlias_INSTANTFEEDBACKVIEW_ListView" ClassName="fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects.SlowOfferWithPersistentAlias" DataAccessMode="InstantFeedbackView" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="HourSum" PropertyName="HourSum" Width="400" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="SlowOfferWithPersistentAlias_SERVERMODE_ListView" ClassName="fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects.SlowOfferWithPersistentAlias" DataAccessMode="Server" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="HourSum" PropertyName="HourSum" Width="400" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="SlowOfferWithPersistentAlias_SERVERVIEW_ListView" ClassName="fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects.SlowOfferWithPersistentAlias" DataAccessMode="ServerView" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="HourSum" PropertyName="HourSum" Width="400" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+  </Views>
 </Application>
