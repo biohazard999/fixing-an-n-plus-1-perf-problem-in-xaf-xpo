@@ -71,13 +71,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\FastObject.cs" />
-    <Compile Include="BusinessObjects\RelatedData.cs" />
-    <Compile Include="BusinessObjects\SlowObjectWithAssociation.cs" />
-    <Compile Include="BusinessObjects\SlowObjectWithCache.cs" />
-    <Compile Include="BusinessObjects\SlowObject.cs" />
-    <Compile Include="BusinessObjects\SlowObjectWithPersistentAlias.cs" />
-    <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="BusinessObjects\SlowOfferWithLinq.cs" />
+    <Compile Include="BusinessObjects\SlowOffer.cs" />
+    <Compile Include="BusinessObjects\SlowOfferWithPersistentAlias.cs" />
+    <Compile Include="Controllers\GenerateDataController.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -92,19 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BusinessObjects\ReadMe.txt" />
-    <None Include="Controllers\ReadMe.txt" />
-    <None Include="DatabaseUpdate\ReadMe.txt" />
-    <None Include="Images\ReadMe.txt" />
-    <None Include="ReadMe.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="FunctionalTests\config.xml" />
-    <None Include="FunctionalTests\sample.ets" />
-    <None Include="FunctionalTests\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Welcome.html" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

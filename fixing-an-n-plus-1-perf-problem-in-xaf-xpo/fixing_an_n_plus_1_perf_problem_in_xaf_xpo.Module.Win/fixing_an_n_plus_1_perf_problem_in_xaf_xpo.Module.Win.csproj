@@ -120,21 +120,6 @@
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\ExpressAppLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Controllers\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Editors\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module\fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.csproj">
       <Project>{0A2FB31E-0F31-408B-AD8C-37FD78C7B2E7}</Project>
       <Name>fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module</Name>

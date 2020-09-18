@@ -1,31 +1,17 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
-using DevExpress.ExpressApp;
-using DevExpress.ExpressApp.DC;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Model;
-using DevExpress.ExpressApp.Editors;
-using DevExpress.ExpressApp.Actions;
-using DevExpress.ExpressApp.Updating;
-using DevExpress.ExpressApp.Model.Core;
-using DevExpress.ExpressApp.Model.DomainLogics;
-using DevExpress.ExpressApp.Model.NodeGenerators;
+using System.Linq;
 
-namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Win {
+using DevExpress.ExpressApp;
+
+namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Win
+{
     [ToolboxItemFilter("Xaf.Platform.Win")]
-    // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.ModuleBase.
-    public sealed partial class fixing_an_n_plus_1_perf_problem_in_xaf_xpoWindowsFormsModule : ModuleBase {
-        public fixing_an_n_plus_1_perf_problem_in_xaf_xpoWindowsFormsModule() {
+    public sealed partial class fixing_an_n_plus_1_perf_problem_in_xaf_xpoWindowsFormsModule : ModuleBase
+    {
+        public fixing_an_n_plus_1_perf_problem_in_xaf_xpoWindowsFormsModule()
+        {
             InitializeComponent();
-        }
-        public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
-            return ModuleUpdater.EmptyModuleUpdaters;
-        }
-        public override void Setup(XafApplication application) {
-            base.Setup(application);
-            // Manage various aspects of the application UI and behavior at the module level.
         }
     }
 }

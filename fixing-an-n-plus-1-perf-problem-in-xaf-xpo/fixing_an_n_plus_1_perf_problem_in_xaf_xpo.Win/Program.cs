@@ -4,9 +4,7 @@ using System.Windows.Forms;
 
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
-using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
-using DevExpress.Persistent.BaseImpl;
 using DevExpress.XtraEditors;
 
 namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Win {
