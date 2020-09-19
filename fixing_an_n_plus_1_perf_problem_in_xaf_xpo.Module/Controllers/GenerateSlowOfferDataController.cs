@@ -8,4 +8,5 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Controllers
     public class GenerateFasterOfferWithLinqDataController : GenerateDataController<FasterOfferWithLinq, FasterOfferItemWithLinq> { }
     public class GenerateFasterOfferWithCQRSDataController : GenerateDataController<FasterOfferWithCQRS, FasterOfferItemWithCQRS> { }
     public class GenerateFasterOfferWithViewDataController : GenerateDataController<FasterOfferWithView, FasterOfferItemWithView> { }
+    public class GenerateFasterOfferDataController : GenerateDataController<FasterOffer, FasterOfferItem> { }
 }

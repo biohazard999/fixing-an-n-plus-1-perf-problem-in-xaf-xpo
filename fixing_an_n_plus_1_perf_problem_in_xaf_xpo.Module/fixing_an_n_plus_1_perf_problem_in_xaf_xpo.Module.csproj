@@ -72,6 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\FasterOffer.cs" />
     <Compile Include="BusinessObjects\FasterOfferWithView.cs" />
     <Compile Include="BusinessObjects\FasterOfferWithCQRS.cs" />
     <Compile Include="BusinessObjects\IOffer.cs" />
