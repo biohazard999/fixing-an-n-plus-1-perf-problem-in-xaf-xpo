@@ -13,6 +13,11 @@
               <Item Id="@9096422b-bb1d-4319-aa36-7da08dd8b1a0" ViewId="FasterOfferWithCQRSQuery_ListView" IsNewNode="True" />
             </Items>
           </Item>
+          <Item Id="FasterOfferWithView_ListView" Index="5">
+            <Items>
+              <Item Id="@f73cc6e5-8e8b-4362-8ac0-8d5f1f5e8db6" ViewId="FasterOfferWithViewQuery_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
         </Items>
       </Item>
     </Items>
@@ -22,6 +27,7 @@
   </SchemaModules>
   <Views>
     <ListView Id="FasterOfferWithCQRSQuery_ListView" DataAccessMode="DataView" />
+    <ListView Id="FasterOfferWithViewQuery_ListView" DataAccessMode="DataView" />
     <ListView Id="SlowOfferWithPersistentAlias_ListView">
       <Variants Current="Client">
         <Variant Id="Client" ViewID="SlowOfferWithPersistentAlias_ListView" Caption="Client" Index="0" IsNewNode="True" />

@@ -72,6 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\FasterOfferWithView.cs" />
     <Compile Include="BusinessObjects\FasterOfferWithCQRS.cs" />
     <Compile Include="BusinessObjects\IOffer.cs" />
     <Compile Include="BusinessObjects\IOfferItem.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Controllers\GenerateSlowOfferDataController.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DatabaseUpdaters\CreateViewDatabaseUpdater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
