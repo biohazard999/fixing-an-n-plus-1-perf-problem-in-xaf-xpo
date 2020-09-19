@@ -6,18 +6,19 @@
         <Items>
           <Item Id="SlowOffer_ListView" Index="0" />
           <Item Id="SlowOfferWithLinq_ListView" Index="1" />
-          <Item Id="SlowOfferWithPersistentAlias_ListView" Index="2" />
-          <Item Id="SlowOfferWithPersistentAlias_ListView_SERVERMODE" ObjectKey="" Caption="Offer Persistent Alias ServerMode" ViewId="SlowOfferWithPersistentAlias_SERVERMODE_ListView" Index="3" IsNewNode="True" />
-          <Item Id="SlowOfferWithPersistentAlias_ListView_DATAVIEW" ObjectKey="" Caption="Offer Persistent Alias DataView" Index="4" ViewId="SlowOfferWithPersistentAlias_DATAVIEW_ListView" IsNewNode="True" />
-          <Item Id="SlowOfferWithPersistentAlias_ListView_INSTANTFEEDBACK" ObjectKey="" Caption="Offer Persistent Alias InstantFeedback" Index="5" ViewId="SlowOfferWithPersistentAlias_INSTANTFEEDBACK_ListView" IsNewNode="True" />
-          <Item Id="SlowOfferWithPersistentAlias_ListView_INSTANTFEEDBACKView" ObjectKey="" Caption="Offer Persistent Alias InstantFeedbackView" Index="6" ViewId="SlowOfferWithPersistentAlias_INSTANTFEEDBACKVIEW_ListView" IsNewNode="True" />
-          <Item Id="SlowOfferWithPersistentAlias_ListView_SERVERVIEW" ObjectKey="" Caption="Offer Persistent Alias ServerView" Index="7" ViewId="SlowOfferWithPersistentAlias_SERVERVIEW_ListView" IsNewNode="True" />
+          <Item Id="FasterOfferWithLinq_ListView" Index="2" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView" Index="3" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_SERVERMODE" ObjectKey="" Caption="Offer Persistent Alias ServerMode" ViewId="SlowOfferWithPersistentAlias_SERVERMODE_ListView" Index="4" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_DATAVIEW" ObjectKey="" Caption="Offer Persistent Alias DataView" Index="5" ViewId="SlowOfferWithPersistentAlias_DATAVIEW_ListView" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_INSTANTFEEDBACK" ObjectKey="" Caption="Offer Persistent Alias InstantFeedback" Index="6" ViewId="SlowOfferWithPersistentAlias_INSTANTFEEDBACK_ListView" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_INSTANTFEEDBACKView" ObjectKey="" Caption="Offer Persistent Alias InstantFeedbackView" Index="7" ViewId="SlowOfferWithPersistentAlias_INSTANTFEEDBACKVIEW_ListView" IsNewNode="True" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView_SERVERVIEW" ObjectKey="" Caption="Offer Persistent Alias ServerView" Index="8" ViewId="SlowOfferWithPersistentAlias_SERVERVIEW_ListView" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="19.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.1.7.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <ListView Id="SlowOfferWithPersistentAlias_DATAVIEW_ListView" ClassName="fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects.SlowOfferWithPersistentAlias" DataAccessMode="DataView" IsNewNode="True">
