@@ -49,7 +49,7 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.BusinessObjects
                     }
                 }
                 //We never should reach this point
-                //Do the right thing as callback anyway
+                //Do the right thing as fallback anyway
                 return OfferItems.Sum(m => m.Hours);
             }
         }
