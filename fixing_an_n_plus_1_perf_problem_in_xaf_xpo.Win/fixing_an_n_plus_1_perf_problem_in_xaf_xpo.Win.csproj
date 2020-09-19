@@ -55,6 +55,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Win.v20.1">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
@@ -185,6 +186,9 @@
       <DependentUpon>XafSplashScreen.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="WinApplication.resx">
+      <DependentUpon>WinApplication.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XafSplashScreen.resx">
       <DependentUpon>XafSplashScreen.cs</DependentUpon>
     </EmbeddedResource>

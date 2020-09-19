@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.SystemModule;
+using DevExpress.ExpressApp.ViewVariantsModule;
 using DevExpress.ExpressApp.Win;
 using DevExpress.Xpo;
 
@@ -22,6 +23,7 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Win.Controllers
             Frame.GetController<RefreshController>().RefreshAction.Executing += RefreshAction_Executing;
             Frame.GetController<RefreshController>().RefreshAction.Executed += RefreshAction_Executed; ;
             Frame.GetController<RecordsNavigationController>().Active[nameof(MeasurePerformanceController)] = false;
+            Frame.GetController<ChangeVariantController>().Active[nameof(MeasurePerformanceController)] = false;
         }
 
         private void RefreshAction_Executing(object sender, System.ComponentModel.CancelEventArgs e)

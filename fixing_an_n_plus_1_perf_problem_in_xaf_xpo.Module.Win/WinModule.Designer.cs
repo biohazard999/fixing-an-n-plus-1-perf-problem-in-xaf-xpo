@@ -28,6 +28,8 @@
             // 
             this.RequiredModuleTypes.Add(typeof(fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.fixing_an_n_plus_1_perf_problem_in_xaf_xpoModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
+            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule));
+
         }
 
         #endregion
