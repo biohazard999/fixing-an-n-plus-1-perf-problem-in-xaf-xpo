@@ -7,7 +7,12 @@
           <Item Id="SlowOffer_ListView" Index="0" />
           <Item Id="SlowOfferWithLinq_ListView" Index="1" />
           <Item Id="FasterOfferWithLinq_ListView" Index="2" />
-          <Item Id="SlowOfferWithPersistentAlias_ListView" Index="3" />
+          <Item Id="SlowOfferWithPersistentAlias_ListView" Index="3" Caption="Offer With Persistent Alias" />
+          <Item Id="FasterOfferWithCQRS_ListView" Index="4">
+            <Items>
+              <Item Id="@9096422b-bb1d-4319-aa36-7da08dd8b1a0" ViewId="FasterOfferWithCQRSQuery_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
         </Items>
       </Item>
     </Items>
@@ -16,6 +21,7 @@
     <SchemaModule Name="SystemModule" Version="20.1.7.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="FasterOfferWithCQRSQuery_ListView" DataAccessMode="DataView" />
     <ListView Id="SlowOfferWithPersistentAlias_ListView">
       <Variants Current="Client">
         <Variant Id="Client" ViewID="SlowOfferWithPersistentAlias_ListView" Caption="Client" Index="0" IsNewNode="True" />

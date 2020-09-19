@@ -37,10 +37,17 @@ namespace fixing_an_n_plus_1_perf_problem_in_xaf_xpo.Module.Win.Controllers
             var cnt = ObjectSpace.GetObjectsCount(View.ObjectTypeInfo.Type, null);
 
             var member = View.ObjectTypeInfo.Type.GetProperties().FirstOrDefault(m => m.GetCustomAttribute<AssociationAttribute>() != null);
-            var cnt2 = ObjectSpace.GetObjectsCount(member.PropertyType.GetGenericArguments()[0], null);
+
+            var cnt2 = member == null
+                ? 0
+                : ObjectSpace.GetObjectsCount(member.PropertyType.GetGenericArguments()[0], null);
+
+            var name = member == null
+                ? string.Empty
+                : member.PropertyType.GetGenericArguments()[0].Name;
 
             var mode = (View.Model as DevExpress.ExpressApp.Model.IModelListView).DataAccessMode;
-            WinApplication.Messaging.Show("Elapsed", $"{View.Caption}{Environment.NewLine}DataAccessMode: {mode}{Environment.NewLine}{View.ObjectTypeInfo.Type.Name}: {cnt}{Environment.NewLine}{member.PropertyType.GetGenericArguments()[0].Name}: {cnt2}{Environment.NewLine}{Stopwatch.Elapsed}");
+            WinApplication.Messaging.Show("Elapsed", $"{View.Caption}{Environment.NewLine}DataAccessMode: {mode}{Environment.NewLine}{View.ObjectTypeInfo.Type.Name}: {cnt}{Environment.NewLine}{name}: {cnt2}{Environment.NewLine}{Stopwatch.Elapsed}");
         }
     }
 }
